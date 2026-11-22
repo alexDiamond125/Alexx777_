@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALEX777 — Sovereign Club & Exchange | Since 2010</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       [1. THEME COLORS & VARIABLES] - Yahan se colors change karein
+       ============================================================ */
+    :root {
+      --bg-black: #060608;
+      --bg-card: #0c0c10;
+      --bg-elevated: #111116;
+      --silver-bright: #ffffff;
+      --silver-mid: #cbd5e1;
+      --gold-subtle: #e7cfa0;
+      --crimson-glow: #dc143c;
+      --whatsapp-green: #25D366;
+      --border-light: rgba(255, 255, 255, 0.08);
+      --border-gold: rgba(231, 207, 160, 0.25);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-black);
+      color: #ffffff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      padding-bottom: 84px;
+    }
+
+    /* Soft Obsidian & Subtle Crimson/Silver Aura */
+    .ambient-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(220, 20, 60, 0.13), transparent 52%),
+        radial-gradient(circle at 85% 35%, rgba(255, 255, 255, 0.04), transparent 45%),
+        radial-gradient(circle at 15% 75%, rgba(231, 207, 160, 0.06), transparent 50%),
+        #060608;
+    }
+
+    #starCanvas {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .page-wrap {
+      position: relative;
+      z-index: 10;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Eyebrow Label */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold-subtle);
+      margin-bottom: 8px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 20px;
+      height: 1px;
+      background: var(--gold-subtle);
+      opacity: 0.7;
+    }
+
+    /* ============================================================
+       [2. HERO SECTION - TOP LOGO, DP & PRIMARY CONCIERGE]
+       ============================================================ */
+    .hero-section {
+      padding: 22px 0 54px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .top-brand-logo {
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .top-brand-logo img {
+      height: 100px;
+      width: auto;
+      max-width: 82vw;
+      object-fit: contain;
+      display: block;
+      background: transparent;
+      filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.25)) drop-shadow(0 0 12px rgba(220, 20, 60, 0.4));
+    }
+
+    /* Status / 5-Sec Redirect Pill */
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      margin-bottom: 20px;
+      font-size: 0.78rem;
+      color: var(--silver-mid);
+    }
+
+    .status-pill-tag {
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ffffff, #94a3b8);
+      color: #060608;
+      font-weight: 800;
+      font-size: 0.68rem;
+      letter-spacing: 0.8px;
+    }
+
+    .stay-btn {
+      background: none;
+      border: none;
+      color: var(--gold-subtle);
+      text-decoration: underline;
+      font-size: 0.72rem;
+      cursor: pointer;
+      margin-left: 4px;
+    }
+
+    /* Center Circular DP Showcase */
+    .dp-wrapper {
+      position: relative;
+      width: 220px;
+      height: 220px;
+      margin: 0 auto 22px;
+      display: grid;
+      place-items: center;
+    }
+
+    .dp-aura {
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      background: conic-gradient(
+        from 0deg,
+        rgba(255, 255, 255, 0.75),
+        rgba(220, 20, 60, 0.85),
+        rgba(148, 163, 184, 0.4),
+        rgba(231, 207, 160, 0.6),
+        rgba(255, 255, 255, 0.75)
+      );
+      filter: blur(16px);
+      opacity: 0.68;
+      animation: rotateRim 8s linear infinite;
+    }
+
+    @keyframes rotateRim {
+      to { transform: rotate(360deg); }
+    }
+
+    .dp-circle {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      padding: 3px;
+      background: linear-gradient(145deg, #ffffff 0%, #64748b 50%, #dc143c 100%);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.9);
+      overflow: hidden;
+      background-color: #000000;
+    }
+
+    .dp-circle img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-heading {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2rem, 5.5vw, 3.3rem);
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      line-height: 1.1;
+      text-transform: uppercase;
+      background: linear-gradient(180deg, #ffffff 0%, #e2e8f0 55%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    .hero-desc {
+      font-size: 0.95rem;
+      color: #9ca3af;
+      max-width: 520px;
+      line-height: 1.6;
+      margin-bottom: 26px;
+    }
+
+    .hero-desc strong {
+      color: var(--gold-subtle);
+      font-weight: 600;
+    }
+
+    /* Primary WhatsApp & Instagram CTA Buttons */
+    .action-stack {
+      width: 100%;
+      max-width: 440px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .cta-btn {
+      position: relative;
+      width: 100%;
+      padding: 15px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.88rem;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      overflow: hidden;
+    }
+
+    .cta-btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 55%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+      transform: skewX(-20deg);
+      animation: shine 3.5s infinite;
+    }
+
+    @keyframes shine {
+      0% { left: -100%; }
+      45%, 100% { left: 150%; }
+    }
+
+    .btn-wa {
+      color: #031509;
+      background: linear-gradient(135deg, #6ee7b7 0%, #25D366 50%, #16a34a 100%);
+      box-shadow: 0 0 28px rgba(37, 211, 102, 0.38), 0 8px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .btn-wa:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 40px rgba(37, 211, 102, 0.65);
+    }
+
+    .btn-ig {
+      color: #ffffff;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.07), rgba(220, 20, 60, 0.14));
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .btn-ig:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold-subtle);
+    }
+
+    /* ============================================================
+       [3. CURATED SUITES GRID - "A WORLD OF EXCEPTIONAL PLAY"]
+       ============================================================ */
+    .luxury-section {
+      padding: 58px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .section-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .serif-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.75rem, 4vw, 2.55rem);
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      line-height: 1.15;
+      color: #ffffff;
+    }
+
+    .serif-title span {
+      color: var(--gold-subtle);
+    }
+
+    .section-sub {
+      font-size: 0.86rem;
+      color: #9ca3af;
+      margin-top: 6px;
+    }
+
+    .collection-badge {
+      font-size: 0.68rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-subtle);
+      opacity: 0.85;
+    }
+
+    .suites-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .suite-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .suite-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-gold);
+    }
+
+    .suite-banner {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      position: relative;
+      border-bottom: 1px solid var(--border-light);
+      overflow: hidden;
+      background: #0b0b0f;
+    }
+
+    .suite-banner img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      opacity: 0.94;
+      transition: transform 0.4s ease;
+    }
+
+    .suite-card:hover .suite-banner img {
+      transform: scale(1.05);
+    }
+
+    .suite-banner::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(12, 12, 16, 0.72) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    .suite-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .suite-tag {
+      font-size: 0.64rem;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--gold-subtle);
+      margin-bottom: 4px;
+    }
+
+    .suite-body h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .suite-body p {
+      font-size: 0.78rem;
+      color: #8e8e93;
+      margin-bottom: 16px;
+      flex: 1;
+    }
+
+    .suite-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border-light);
+      background: rgba(255, 255, 255, 0.02);
+      color: #e4e4e7;
+      text-decoration: none;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      transition: all 0.25s ease;
+    }
+
+    .suite-link:hover {
+      border-color: var(--gold-subtle);
+      color: var(--gold-subtle);
+    }
+
+    /* ============================================================
+       [4. PRIVATE INVITATION BANNER - "THE CLUB AWAITS"]
+       ============================================================ */
+    .invitation-banner {
+      margin: 48px 0;
+      padding: 38px 32px;
+      border-radius: 12px;
+      border: 1px solid var(--border-gold);
+      background:
+        radial-gradient(circle at 80% 50%, rgba(231, 207, 160, 0.14), transparent 55%),
+        radial-gradient(circle at 15% 50%, rgba(220, 20, 60, 0.12), transparent 55%),
+        linear-gradient(135deg, #0e0d11 0%, #08080a 100%);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .invite-cta {
+      padding: 15px 24px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #f5df9e 0%, var(--gold-subtle) 100%);
+      color: #090805;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.76rem;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 10px 28px rgba(231, 207, 160, 0.2);
+      transition: transform 0.25s ease;
+    }
+
+    .invite-cta:hover {
+      transform: translateY(-2px);
+    }
+
+    /* ============================================================
+       [5. VIP PRIVILEGE TIERS - 3 COLUMNS]
+       ============================================================ */
+    .tiers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .tier-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tier-card.featured {
+      border-color: var(--gold-subtle);
+      background: linear-gradient(180deg, rgba(231, 207, 160, 0.06) 0%, var(--bg-card) 100%);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65);
+    }
+
+    .tier-name {
+      font-family: 'Cinzel', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .tier-card.featured .tier-name {
+      color: var(--gold-subtle);
+    }
+
+    .tier-perks {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 22px;
+      flex: 1;
+    }
+
+    .tier-perks li {
+      font-size: 0.82rem;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tier-perks li::before {
+      content: '✓';
+      color: var(--gold-subtle);
+      font-weight: 700;
+    }
+
+    .tier-btn {
+      display: block;
+      text-align: center;
+      padding: 12px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border-light);
+      color: var(--gold-subtle);
+      text-decoration: none;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      transition: all 0.25s ease;
+    }
+
+    .tier-card.featured .tier-btn {
+      background: linear-gradient(135deg, #f5df9e 0%, var(--gold-subtle) 100%);
+      color: #090805;
+      border: none;
+    }
+
+    .tier-btn:hover {
+      border-color: var(--gold-subtle);
+    }
+
+    /* ============================================================
+       [6. TRUST STANDARD - "YOUR TRUST. OUR GREATEST ASSET."]
+       ============================================================ */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .trust-pillar h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 10px 0 4px;
+    }
+
+    .trust-pillar p {
+      font-size: 0.78rem;
+      color: #8e8e93;
+      line-height: 1.5;
+    }
+
+    .trust-icon {
+      color: var(--gold-subtle);
+      font-size: 1.25rem;
+    }
+
+    /* ============================================================
+       [7. FOOTER WITH COPYRIGHT, 18+ TAG & TERMS & CONDITIONS]
+       ============================================================ */
+    footer {
+      padding: 44px 0 28px;
+      color: #71717a;
+      font-size: 0.78rem;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .footer-brand h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      color: var(--gold-subtle);
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+    }
+
+    .footer-brand p {
+      font-size: 0.8rem;
+      color: #8e8e93;
+      max-width: 320px;
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+
+    .badges-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .legal-pill {
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid var(--border-light);
+      background: rgba(255, 255, 255, 0.03);
+      color: #d4d4d8;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+    }
+
+    .legal-pill.age-18 {
+      border-color: rgba(220, 20, 60, 0.5);
+      color: #fda4af;
+    }
+
+    .footer-col h4 {
+      font-size: 0.74rem;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--gold-subtle);
+      margin-bottom: 12px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-col a, .footer-col button {
+      background: none;
+      border: none;
+      padding: 0;
+      color: #9ca3af;
+      text-decoration: none;
+      font-size: 0.8rem;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+    }
+
+    .footer-col a:hover, .footer-col button:hover {
+      color: #ffffff;
+    }
+
+    .legal-disclaimer {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 0.71rem;
+      color: #6b7280;
+      line-height: 1.6;
+    }
+
+    .copyright-bar {
+      padding-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.76rem;
+    }
+
+    .copyright-bar span {
+      color: #e4e4e7;
+      font-weight: 600;
+    }
+
+    /* ============================================================
+       [8. BOTTOM FLOATING CONCIERGE DOCK]
+       ============================================================ */
+    .floating-dock {
+      position: fixed;
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 50;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 12px;
+      background: rgba(12, 12, 16, 0.9);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.85);
+      max-width: 94vw;
+    }
+
+    .dock-wa {
+      padding: 9px 16px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #f5df9e 0%, var(--gold-subtle) 100%);
+      color: #090805;
+      font-weight: 800;
+      font-size: 0.72rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .dock-ig {
+      padding: 9px 14px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-light);
+      color: #e4e4e7;
+      font-weight: 600;
+      font-size: 0.72rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .dock-18 {
+      padding: 0 8px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #9ca3af;
+    }
+
+    /* ============================================================
+       [9. TERMS & CONDITIONS MODAL POPUP]
+       ============================================================ */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      background: rgba(0, 0, 0, 0.82);
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-card {
+      background: #0e0e13;
+      border: 1px solid var(--border-gold);
+      border-radius: 14px;
+      max-width: 540px;
+      width: 100%;
+      padding: 26px;
+      max-height: 82vh;
+      overflow-y: auto;
+    }
+
+    .modal-card h3 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold-subtle);
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+    }
+
+    .modal-card p {
+      font-size: 0.82rem;
+      color: #a1a1aa;
+      line-height: 1.65;
+      margin-bottom: 12px;
+    }
+
+    .close-modal {
+      margin-top: 8px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      background: var(--gold-subtle);
+      color: #060608;
+      font-weight: 800;
+      font-size: 0.78rem;
+      cursor: pointer;
+    }
+
+    /* Bottom Progress Bar */
+    .redirect-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: 100%;
+      background: linear-gradient(90deg, var(--crimson-glow), var(--gold-subtle), var(--whatsapp-green));
+      transform-origin: left;
+      animation: barShrink 5s linear forwards;
+      z-index: 80;
+    }
+
+    @keyframes barShrink {
+      from { transform: scaleX(1); }
+      to { transform: scaleX(0); }
+    }
+
+    /* ============================================================
+       [10. RESPONSIVE MOBILE & TABLET LAYOUT]
+       ============================================================ */
+    @media (max-width: 900px) {
+      .suites-grid { grid-template-columns: repeat(2, 1fr); }
+      .tiers-grid { grid-template-columns: 1fr; }
+      .trust-grid { grid-template-columns: 1fr 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 520px) {
+      .page-wrap { padding: 0 15px; }
+      .hero-section { padding: 14px 0 40px; }
+      .top-brand-logo img { height: 86px; }
+      .status-badge { font-size: 0.72rem; padding: 5px 11px; margin-bottom: 16px; }
+      .dp-wrapper { width: 185px; height: 185px; margin-bottom: 16px; }
+      .hero-heading { font-size: 1.85rem; letter-spacing: 1.8px; }
+      .hero-desc { font-size: 0.85rem; margin-bottom: 20px; }
+      .cta-btn { padding: 13px 18px; font-size: 0.82rem; }
+      .luxury-section { padding: 40px 0; }
+      .suites-grid { grid-template-columns: 1fr; gap: 16px; }
+      .invitation-banner { padding: 26px 20px; margin: 34px 0; }
+      .trust-grid { grid-template-columns: 1fr; gap: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ambient-bg"></div>
+  <canvas id="starCanvas"></canvas>
+
+  <div class="page-wrap">
+
+    <!-- ============================================================
+         [SECTION 1: HERO - TOP LOGO, DP & MAIN BUTTONS]
+         ============================================================ -->
+    <section class="hero-section" id="hero">
+      <div class="top-brand-logo" id="top-logo">
+        <img
+          src="assests/logo.png"
+          onerror="this.onerror=null; this.src='assests/Alex77%20logo.png';"
+          alt="ALEX777 Logo"
+        />
+      </div>
+
+      <div class="status-badge" id="statusBadge">
+        <span class="status-pill-tag" id="timerTag">VIP DESK</span>
+        <span id="statusText">Sovereign Club • Trusted Since 2010</span>
+        <button type="button" class="stay-btn" id="stayBtn" style="display:none;">Stay</button>
+      </div>
+
+      <div class="dp-wrapper" id="center-dp">
+        <div class="dp-aura"></div>
+        <div class="dp-circle">
+          <img
+            src="assests/dp.png"
+            onerror="this.onerror=null; this.src='assests/ALEX777%20Premium%20DP.png';"
+            alt="ALEX777 Premium DP"
+          />
+        </div>
+      </div>
+
+      <h1 class="hero-heading">ALEX777 <span>SOVEREIGN</span></h1>
+      <p class="hero-desc">
+        India's Biggest & Most Trusted Luxury Exchange Since 2010.
+        <strong>24×7 Automated Deposit, Zero-Deduction Withdrawal & Private VIP Concierge.</strong>
+      </p>
+
+      <div class="action-stack" id="cta-buttons">
+        <a href="#" id="mainWhatsappBtn" class="cta-btn btn-wa" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.758.459 3.475 1.331 4.988L2 22l5.188-1.359a9.927 9.927 0 0 0 4.843 1.258h.004c5.515 0 9.968-4.453 9.968-9.969A9.93 9.93 0 0 0 19.08 4.92 9.914 9.914 0 0 0 12.031 2zm5.822 14.289c-.246.693-1.434 1.325-1.994 1.409-.512.077-1.158.11-1.869-.116-.431-.137-.984-.321-1.693-.627-2.978-1.285-4.922-4.285-5.071-4.484-.148-.199-1.211-1.611-1.211-3.073 0-1.462.766-2.181 1.038-2.478.272-.297.594-.371.792-.371.198 0 .396.002.569.01.182.009.427-.069.668.51.247.594.841 2.055.915 2.204.074.149.124.322.025.52-.099.198-.148.322-.297.495-.148.173-.312.387-.446.52-.148.148-.303.309-.13.606.173.297.769 1.269 1.651 2.055 1.135 1.012 2.092 1.326 2.389 1.474.297.149.47.124.643-.074.173-.198.742-.866.94-1.163.198-.297.396-.247.668-.148.272.099 1.732.817 2.029.965.297.149.495.223.569.347.074.124.074.718-.172 1.411z"/>
+          </svg>
+          <span>Get VIP ID on WhatsApp</span>
+        </a>
+
+        <a href="#" id="mainInstagramBtn" class="cta-btn btn-ig" target="_blank" rel="noopener">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span>Follow Official Instagram</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [SECTION 2: CURATED SUITES - "A WORLD OF EXCEPTIONAL PLAY"]
+         ============================================================ -->
+    <section class="luxury-section" id="suites-section">
+      <div class="section-top-row">
+        <div>
+          <div class="eyebrow">Curated For The Connoisseur</div>
+          <h2 class="serif-title">A World Of <span>Exceptional Play.</span></h2>
+          <p class="section-sub">Four distinct experiences. One unmistakable standard since 2010.</p>
+        </div>
+        <div class="collection-badge">✦ The ALEX777 Collection</div>
+      </div>
+
+      <div class="suites-grid">
+        <div class="suite-card">
+          <div class="suite-banner">
+            <img src="assests/cricket.jpg" alt="Cricket Exchange" />
+          </div>
+          <div class="suite-body">
+            <div class="suite-tag">Live Sports</div>
+            <h3>Cricket Exchange</h3>
+            <p>Every ball. Every possibility. Ultra-fast live odds & instant settlement.</p>
+            <a href="#" class="suite-link wa-trigger"><span>Explore Suite</span><span>↗</span></a>
+          </div>
+        </div>
+
+        <div class="suite-card">
+          <div class="suite-banner">
+            <img src="assests/live%20casino.jpg" alt="Live Casino" />
+          </div>
+          <div class="suite-body">
+            <div class="suite-tag">Live Dealers</div>
+            <h3>Live Casino</h3>
+            <p>1000+ real dealer tables. Your private high-limit seat 24×7.</p>
+            <a href="#" class="suite-link wa-trigger"><span>Explore Suite</span><span>↗</span></a>
+          </div>
+        </div>
+
+        <div class="suite-card">
+          <div class="suite-banner">
+            <img src="assests/Royal%20Roulette.jpg" alt="Royal Roulette" />
+          </div>
+          <div class="suite-body">
+            <div class="suite-tag">Classic Collection</div>
+            <h3>Royal Roulette</h3>
+            <p>One spin. Infinite anticipation with HD European & Lightning tables.</p>
+            <a href="#" class="suite-link wa-trigger"><span>Explore Suite</span><span>↗</span></a>
+          </div>
+        </div>
+
+        <div class="suite-card">
+          <div class="suite-banner">
+            <img src="assests/Teen%20Patti%20VIP.jpg" alt="Teen Patti VIP" />
+          </div>
+          <div class="suite-body">
+            <div class="suite-tag">The Indian Classic</div>
+            <h3>Teen Patti VIP</h3>
+            <p>Three cards. A royal tradition with instant table entry & payouts.</p>
+            <a href="#" class="suite-link wa-trigger"><span>Explore Suite</span><span>↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [SECTION 3: PRIVATE INVITATION BANNER]
+         ============================================================ -->
+    <div class="invitation-banner" id="invitation-banner">
+      <div>
+        <div class="eyebrow">Your Private Invitation</div>
+        <h2 class="serif-title">The Club Awaits.<br><span>Your Seat Is Reserved.</span></h2>
+        <p class="section-sub">A new VIP identity. A world of privilege. One WhatsApp conversation away.</p>
+      </div>
+      <a href="#" class="invite-cta wa-trigger" target="_blank" rel="noopener">
+        <span>Get New VIP ID On WhatsApp</span>
+        <span>↗</span>
+      </a>
+    </div>
+
+    <!-- ============================================================
+         [SECTION 4: VIP PRIVILEGE TIERS]
+         ============================================================ -->
+    <section class="luxury-section" id="tiers-section">
+      <div class="eyebrow">Membership Privileges</div>
+      <h2 class="serif-title">Not Just A Member. <span>Royalty.</span></h2>
+      <p class="section-sub">Tailored tiers designed for serious players seeking speed, privacy, and priority service.</p>
+
+      <div class="tiers-grid">
+        <div class="tier-card">
+          <div class="tier-name">IMPERIAL SILVER</div>
+          <ul class="tier-perks">
+            <li>Instant VIP ID Activation</li>
+            <li>24 Hour Automated Deposit</li>
+            <li>Priority Cashier Access</li>
+            <li>1000+ Live Casino & Sports</li>
+          </ul>
+          <a href="#" class="tier-btn wa-trigger">Explore Imperial Silver ↗</a>
+        </div>
+
+        <div class="tier-card featured">
+          <div class="tier-name">CROWN DIAMOND</div>
+          <ul class="tier-perks">
+            <li>All Imperial Silver Privileges</li>
+            <li>Zero-Delay Priority Withdrawals</li>
+            <li>Dedicated Relationship Manager</li>
+            <li>Private High-Limit Tables</li>
+          </ul>
+          <a href="#" class="tier-btn wa-trigger">Explore Crown Diamond ↗</a>
+        </div>
+
+        <div class="tier-card">
+          <div class="tier-name">ALEX777 SOVEREIGN</div>
+          <ul class="tier-perks">
+            <li>All Crown Diamond Privileges</li>
+            <li>Bespoke Rewards & Invitations</li>
+            <li>Personal Sovereign Concierge</li>
+            <li>Discreet, Personalized Service</li>
+          </ul>
+          <a href="#" class="tier-btn wa-trigger">Explore Sovereign ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [SECTION 5: THE SOVEREIGN STANDARD - TRUST PILLARS]
+         ============================================================ -->
+    <section class="luxury-section" id="trust-section">
+      <div class="trust-grid">
+        <div>
+          <div class="eyebrow">The Sovereign Standard</div>
+          <h2 class="serif-title">Your Trust.<br><span>Our Greatest Asset.</span></h2>
+        </div>
+
+        <div class="trust-pillar">
+          <div class="trust-icon">◈</div>
+          <h4>Zero Deduction</h4>
+          <p>Transparent cashier terms. Your winning balance, 100% respected.</p>
+        </div>
+
+        <div class="trust-pillar">
+          <div class="trust-icon">🔒</div>
+          <h4>Total Discretion</h4>
+          <p>Privacy-first VIP onboarding. Confidential by design since 2010.</p>
+        </div>
+
+        <div class="trust-pillar">
+          <div class="trust-icon">🎧</div>
+          <h4>24/7 Cashier Desk</h4>
+          <p>A dedicated WhatsApp support desk active round the clock.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [SECTION 6: FOOTER WITH COPYRIGHT, 18+ & TERMS & CONDITIONS]
+         ============================================================ -->
+    <footer id="footer-section">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>ALEX777 OFFICIAL</h3>
+          <p>
+            For those who expect more. ALEX777 brings together world-class live gaming and the discretion of a private members' club since 2010.
+          </p>
+          <div class="badges-row">
+            <span class="legal-pill age-18">18+ ONLY</span>
+            <span class="legal-pill">SSL 256-BIT ENCRYPTED</span>
+            <span class="legal-pill">EST. 2010</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>The Sovereign Club</h4>
+          <ul>
+            <li><a href="#suites-section">Cricket Exchange</a></li>
+            <li><a href="#suites-section">Live Casino Suites</a></li>
+            <li><a href="#tiers-section">VIP Privileges</a></li>
+            <li><a href="#trust-section">Security & Discretion</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Concierge & Legal</h4>
+          <ul>
+            <li><a href="#" class="wa-trigger">24/7 WhatsApp Desk</a></li>
+            <li><a href="#" id="footerIgLink" target="_blank" rel="noopener">Official Instagram</a></li>
+            <li><button type="button" id="openTermsBtn">Terms & Conditions</button></li>
+            <li><button type="button" id="openRespBtn">18+ Responsible Play</button></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="legal-disclaimer">
+        <strong>18+ & LEGAL DISCLAIMER:</strong> This portal is an official concierge gateway for ALEX777 VIP services. Strictly restricted to individuals aged <strong>18 years and above</strong>. Please play responsibly within your personal limits and comply with your local jurisdiction's applicable laws. By proceeding via WhatsApp or Instagram, you agree to our Terms & Conditions.
+      </div>
+
+      <div class="copyright-bar">
+        <div>© 2010–2026 <span>ALEX777 Official</span>. All Rights Reserved.</div>
+        <div>18+ Responsible Gaming • <span>Terms & Conditions Apply</span></div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ============================================================
+       [SECTION 7: BOTTOM FLOATING DOCK]
+       ============================================================ -->
+  <div class="floating-dock">
+    <a href="#" class="dock-wa wa-trigger" target="_blank" rel="noopener">Get Your VIP ID ↗</a>
+    <a href="#" class="dock-ig" id="dockIgLink" target="_blank" rel="noopener">Instagram</a>
+    <span class="dock-18">18+</span>
+  </div>
+
+  <!-- ============================================================
+       [SECTION 8: TERMS & CONDITIONS POPUP MODAL]
+       ============================================================ -->
+  <div class="modal-backdrop" id="termsModal">
+    <div class="modal-card">
+      <h3>ALEX777 — Terms & Conditions (18+)</h3>
+      <p><strong>1. Age Restriction (18+):</strong> Access to ALEX777 VIP services is strictly prohibited for anyone under 18 years of age. Verification may be requested at any time.</p>
+      <p><strong>2. Account & Security:</strong> Each VIP ID is issued exclusively to a single member via our official WhatsApp concierge. Never share your login credentials or OTP with anyone.</p>
+      <p><strong>3. Deposits & Withdrawals:</strong> All transactions are processed 24×7 through verified payment channels with zero hidden deductions, subject to standard banking clearance.</p>
+      <p><strong>4. Responsible Gaming:</strong> Gaming involves financial risk. Play strictly for entertainment and never chase losses.</p>
+      <button type="button" class="close-modal" id="closeTermsBtn">I Understand & Close</button>
+    </div>
+  </div>
+
+  <div class="redirect-bar" id="redirectBar"></div>
+
+  <!-- ============================================================
+       [SECTION 9: SCRIPT CONFIGURATION - YAHAN SE LINKS EDIT KAREIN]
+       ============================================================ -->
+  <script>
+    const CONFIG = {
+      autoRedirect: true, // <-- 5-SECOND AUTO-REDIRECT ON HAI
+      redirectSeconds: 5,
+      whatsappNumber: "917024883003", // Apna WhatsApp number 91 ke saath daalein
+      whatsappMessage: "Hello ALEX777 Mujhe new VIP ID chahiye.",
+      instagramUrl: "https://instagram.com/alex_bookpoint"
+    };
+
+    const waLink = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(CONFIG.whatsappMessage)}`;
+
+    // Assign WhatsApp link to main & all suite/tier triggers
+    document.getElementById("mainWhatsappBtn").href = waLink;
+    document.querySelectorAll(".wa-trigger").forEach(el => el.href = waLink);
+
+    // Assign Instagram link
+    document.getElementById("mainInstagramBtn").href = CONFIG.instagramUrl;
+    document.getElementById("footerIgLink").href = CONFIG.instagramUrl;
+    document.getElementById("dockIgLink").href = CONFIG.instagramUrl;
+
+    // 5-Second Auto Redirect Logic
+    if (CONFIG.autoRedirect) {
+      let seconds = CONFIG.redirectSeconds;
+      const timerTag = document.getElementById("timerTag");
+      const statusText = document.getElementById("statusText");
+      const redirectBar = document.getElementById("redirectBar");
+      const stayBtn = document.getElementById("stayBtn");
+
+      redirectBar.style.display = "block";
+      stayBtn.style.display = "inline";
+      timerTag.textContent = `${seconds}S`;
+      statusText.innerHTML = `Connecting to Official WhatsApp in <strong>${seconds}s</strong>...`;
+
+      const countdown = setInterval(() => {
+        seconds--;
+        if (seconds > 0) {
+          timerTag.textContent = `${seconds}S`;
+          statusText.innerHTML = `Connecting to Official WhatsApp in <strong>${seconds}s</strong>...`;
+        } else {
+          clearInterval(countdown);
+          timerTag.textContent = "LIVE";
+          statusText.innerHTML = `<strong>Opening WhatsApp...</strong>`;
+          window.location.href = waLink;
+        }
+      }, 1000);
+
+      stayBtn.addEventListener("click", () => {
+        clearInterval(countdown);
+        redirectBar.style.display = "none";
+        stayBtn.style.display = "none";
+        timerTag.textContent = "VIP DESK";
+        statusText.innerHTML = `Sovereign Club • Trusted Since 2010`;
+      });
+    }
+
+    // Terms & Conditions Modal Logic
+    const modal = document.getElementById("termsModal");
+    document.getElementById("openTermsBtn").addEventListener("click", () => modal.classList.add("open"));
+    document.getElementById("openRespBtn").addEventListener("click", () => modal.classList.add("open"));
+    document.getElementById("closeTermsBtn").addEventListener("click", () => modal.classList.remove("open"));
+    modal.addEventListener("click", (e) => { if (e.target === modal) modal.classList.remove("open"); });
+
+    // Subtle Silver & Crimson Shooting Stars Background
+    const canvas = document.getElementById("starCanvas");
+    const ctx = canvas.getContext("2d");
+    let w, h, stars = [], shooting = [];
+
+    function resize() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resize);
+    resize();
+
+    for (let i = 0; i < 65; i++) {
+      stars.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: Math.random() * 1.3 + 0.3,
+        a: Math.random(),
+        s: Math.random() * 0.012 + 0.004
+      });
+    }
+
+    setInterval(() => {
+      shooting.push({
+        x: Math.random() * w * 0.85,
+        y: Math.random() * h * 0.3,
+        len: Math.random() * 95 + 60,
+        speed: Math.random() * 9 + 7,
+        a: 0.9
+      });
+    }, 2800);
+
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+
+      stars.forEach(st => {
+        st.a += st.s;
+        if (st.a > 0.85 || st.a < 0.1) st.s *= -1;
+        ctx.beginPath();
+        ctx.arc(st.x, st.y, st.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${st.a})`;
+        ctx.fill();
+      });
+
+      shooting.forEach((sh, i) => {
+        sh.x += sh.speed;
+        sh.y += sh.speed * 0.5;
+        sh.a -= 0.018;
+
+        const grad = ctx.createLinearGradient(sh.x, sh.y, sh.x - sh.len, sh.y - sh.len * 0.5);
+        grad.addColorStop(0, `rgba(255, 255, 255, ${sh.a})`);
+        grad.addColorStop(0.5, `rgba(220, 20, 60, ${sh.a * 0.55})`);
+        grad.addColorStop(1, "rgba(0, 0, 0, 0)");
+
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = 1.6;
+        ctx.beginPath();
+        ctx.moveTo(sh.x, sh.y);
+        ctx.lineTo(sh.x - sh.len, sh.y - sh.len * 0.5);
+        ctx.stroke();
+
+        if (sh.a <= 0) shooting.splice(i, 1);
+      });
+
+      requestAnimationFrame(draw);
+    }
+    draw();
+
+    // Automatic White Background Remover for Top Logo
+    window.addEventListener("load", () => {
+      const logoImg = document.querySelector("#top-logo img");
+      if (!logoImg || !logoImg.complete) return;
+
+      const c = document.createElement("canvas");
+      const cx = c.getContext("2d");
+      c.width = logoImg.naturalWidth;
+      c.height = logoImg.naturalHeight;
+      cx.drawImage(logoImg, 0, 0);
+
+      const imgData = cx.getImageData(0, 0, c.width, c.height);
+      const d = imgData.data;
+
+      for (let i = 0; i < d.length; i += 4) {
+        if (d[i] > 235 && d[i + 1] > 235 && d[i + 2] > 235) {
+          d[i + 3] = 0;
+        }
+      }
+
+      cx.putImageData(imgData, 0, 0);
+      logoImg.src = c.toDataURL("image/png");
+    });
+  </script>
+</body>
+</html>
